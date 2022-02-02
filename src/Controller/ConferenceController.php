@@ -8,11 +8,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ConferenceController extends AbstractController
 {
-    #[Route('/conference', name: 'conference')]
+    #[Route('/', name: 'homepage')]
     public function index(): Response
     {
-        return $this->render('conference/index.html.twig', [
-            'controller_name' => 'ConferenceController',
-        ]);
+        return new Response("
+        <html>
+            <link rel='shortcut icon' href='data:image/x-icon;,' type='image/x-icon'>
+            <body>
+                <img src='/images/oc.png' />
+            </body>
+        </html>
+        "
+        );
     }
 }
